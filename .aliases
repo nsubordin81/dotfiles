@@ -1,1 +1,4 @@
+# cool util scripot to list pip package size in descending order, attribution to stack overflow post author jerrymouse https://stackoverflow.com/questions/34266159/how-to-see-sizes-of-installed-pip-packages
 alias pips="pip list | tail -n +3 | awk '{print $1}' | xargs pip show | grep -E 'Location:|Name:' | cut -d ' ' -f 2 | paste -d ' ' - - | awk '{print $2 \"/\" tolower($1)}' | xargs du -sh 2> /dev/null | sort -hr"
+
+
